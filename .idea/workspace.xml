@@ -6,7 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc55b52a-1f5c-45ec-91e1-315f21195afb" name="Default" comment="" />
+    <list default="true" id="cc55b52a-1f5c-45ec-91e1-315f21195afb" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -129,11 +132,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PackageResource.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PackageResource.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/net/resource/PackageResource.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
               <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="123" column="39" lean-forward="true" selection-start-line="123" selection-start-column="39" selection-end-line="123" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -190,7 +203,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/js/upload.js" />
         <option value="$PROJECT_DIR$/web/js/upload.js" />
@@ -206,6 +218,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/net/dao/IVDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/net/service/VIMService.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4d24f8d6-725a-4f8f-8b69-4e04b8f1372a/console.sql" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -641,12 +654,12 @@
       <workItem from="1516963300272" duration="665000" />
       <workItem from="1516966617288" duration="989000" />
       <workItem from="1516967615085" duration="6494000" />
-      <workItem from="1517193907605" duration="242000" />
+      <workItem from="1517193907605" duration="825000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33125000" />
+    <option name="totallyTimeSpent" value="33708000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="552" y="181" width="1264" height="854" extended-state="0" />
@@ -956,14 +969,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1083,7 +1088,7 @@
         <state relative-caret-position="252">
           <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding>
-            <element signature="e#1000#1001#0" expanded="true" />
+            <element signature="e#1000#1001#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1127,6 +1132,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="123" column="39" lean-forward="true" selection-start-line="123" selection-start-column="39" selection-end-line="123" selection-end-column="39" />
           <folding />
         </state>
       </provider>
