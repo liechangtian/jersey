@@ -11,5 +11,150 @@
     <schema id="5" parent="1" name="performance_schema"/>
     <schema id="6" parent="1" name="sys"/>
     <schema id="7" parent="1" name="vim"/>
+    <table id="8" parent="2" name="Package_IMAGEIDS"/>
+    <table id="9" parent="2" name="SEQUENCE"/>
+    <table id="10" parent="2" name="image"/>
+    <table id="11" parent="2" name="image_vim"/>
+    <table id="12" parent="2" name="package"/>
+    <table id="13" parent="2" name="vim"/>
+    <column id="14" parent="8" name="Package_ID">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="15" parent="8" name="IMAGEIDS">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <index id="16" parent="8" name="FK_Package_IMAGEIDS_Package_ID">
+      <ColNames>Package_ID</ColNames>
+    </index>
+    <foreign-key id="17" parent="8" name="FK_Package_IMAGEIDS_Package_ID">
+      <ColNames>Package_ID</ColNames>
+      <RefSchemaName>jersey</RefSchemaName>
+      <RefTableName>package</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="18" parent="9" name="SEQ_NAME">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="9" name="SEQ_COUNT">
+      <Position>2</Position>
+      <DataType>decimal(38)|0</DataType>
+    </column>
+    <key id="20" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>SEQ_NAME</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="21" parent="10" name="ID">
+      <Position>1</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="10" name="NAME">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="23" parent="10" name="POSITION">
+      <Position>3</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <index id="24" parent="10" name="ID">
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="25" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="26" parent="10" name="ID">
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>ID</UnderlyingIndexName>
+    </key>
+    <column id="27" parent="11" name="IMAGEID">
+      <Position>1</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="11" name="VIMID">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="11" name="DESCRIPRION">
+      <Position>3</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <key id="30" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>IMAGEID
+VIMID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="31" parent="12" name="ID">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="12" name="ISACTIVE">
+      <Position>2</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="33" parent="12" name="ISREADY">
+      <Position>3</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="34" parent="12" name="NAME">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="35" parent="12" name="POSITION">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="36" parent="12" name="SUPPLIER">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="37" parent="12" name="VERSION">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="38" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="39" parent="13" name="ID">
+      <Position>1</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="13" name="NAME">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="41" parent="13" name="URL">
+      <Position>3</Position>
+      <DataType>varchar(300)|0</DataType>
+    </column>
+    <index id="42" parent="13" name="ID">
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="43" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="44" parent="13" name="ID">
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>ID</UnderlyingIndexName>
+    </key>
   </database-model>
 </dataSource>

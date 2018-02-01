@@ -14,6 +14,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,7 +26,7 @@ import java.io.File;
 import java.nio.file.Paths;
 import java.util.List;
 
-@Path("images")
+@Path("v1.0/images")
 public class ImageResource {
     @Context
     HttpServletRequest request;
@@ -43,9 +44,10 @@ public class ImageResource {
     @GET
     @Path("json")
     @Produces(MediaType.APPLICATION_JSON)
-    public Image getJson() {
-        Image p = new Image("23", "打粉底", "cccc");
-        return p;
+    public String getJson() {
+        JSONObject p = new JSONObject("{a:32,b:\"fdff\"}");
+        p.put("c","fkdaj");
+        return p.toString()+"fda";
 
     }
 

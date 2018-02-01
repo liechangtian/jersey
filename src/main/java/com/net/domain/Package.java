@@ -2,9 +2,11 @@ package com.net.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
 
 /***
- * Created on 2017/11/12 at 21:28.  
+ * Created on 2017/11/12 at 21:28.
  ***/
 @Entity
 @Table(name = "package")
@@ -16,12 +18,17 @@ public class Package implements Serializable {
     private static final int VERSION_LENGTH = 20;
     private static final int SUPPLIER_LENGTH = 20;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
     private String name;
     private String position;
     private String version;
     private String supplier;
-    private Boolean state;
+    private Boolean isReady;
+    private Boolean isActive;
+    @ElementCollection
+    private List<String> imageIds;
 
     public Package() {
     }
@@ -40,18 +47,27 @@ public class Package implements Serializable {
         this.supplier = supplier;
     }
 
-    public Package(String id, String name, String position, String version, String supplier, Boolean state) {
+    public Package(String id, String name, String position, String version, String supplier, List imageIds) {
         this.id = id;
         this.name = name;
         this.position = position;
         this.version = version;
         this.supplier = supplier;
-        this.state = state;
+        this.imageIds = imageIds;
+    }
+
+    public Package(String id, String name, String position, String version, String supplier, Boolean isReady, Boolean isActive, List imageIds) {
+        this.id = id;
+        this.name = name;
+        this.position = position;
+        this.version = version;
+        this.supplier = supplier;
+        this.isReady = isReady;
+        this.isActive = isActive;
+        this.imageIds = imageIds;
     }
 
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(unique = true, nullable = false, length = Package.ID_LENGTH, name = "ID")
     public String getId() {
         return id;
@@ -77,9 +93,18 @@ public class Package implements Serializable {
         return supplier;
     }
 
-    @Column(name = "STATE")
-    public Boolean getState() {
-        return state;
+    @Column(name = "ISREADY")
+    public Boolean getIsReady() {
+        return isReady;
+    }
+
+    @Column(name = "ISACTIVE")
+    public Boolean getIsActive() {
+        return isActive;
+    }
+
+    public List<String> getImageIds() {
+        return imageIds;
     }
 
     public void setId(String id) {
@@ -102,12 +127,20 @@ public class Package implements Serializable {
         this.supplier = supplier;
     }
 
-    public void setState(Boolean state) {
-        this.state = state;
+    public void setIsReady(Boolean isReady) {
+        this.isReady = isReady;
+    }
+
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
+    }
+
+    public void setImageIds(List<String> imageIdList) {
+        this.imageIds = imageIdList;
     }
 
     @Override
     public String toString() {
-        return id + ":" + name+":"+state;
+        return id + ":" + name + ":" + position + ":" + isReady + ":" + isActive;
     }
 }

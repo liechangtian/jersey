@@ -109,6 +109,28 @@ function deleteImageInVim() {
 }
 
 
+/*删除包*/
+function deletePackage() {
+    var xmlhttp;
+    var id=$("#deletePackageId").val();
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            document.getElementById("deletePackageResult").innerHTML=xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open("DELETE","api/v1.0/packages/delete?id="+id,true);
+    xmlhttp.send();
+}
 
 // 文件上传
 $(".ct1 #file").on("change", function () {

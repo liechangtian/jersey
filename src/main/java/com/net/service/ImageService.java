@@ -30,14 +30,9 @@ public class ImageService {
     }
 
 
-    public Image getImage(final String Id) {
-        try {
-            return imageDao.findById(Id);
-        } catch (final Exception e) {
-            return null;
-        }
+    public Image getImage(final String id) {
+        return imageDao.findById(id);
     }
-
 
 
     public Images getImages() {

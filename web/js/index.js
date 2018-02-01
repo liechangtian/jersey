@@ -58,7 +58,7 @@ function deleteImage() {
             document.getElementById("deleteImageResult").innerHTML = xmlhttp.responseText;
         }
     }
-    xmlhttp.open("DELETE", "rest/images/delete?id=" + id, true);
+    xmlhttp.open("DELETE", "api/v1.0/images/delete?id=" + id, true);
     xmlhttp.send();
 }
 
@@ -81,7 +81,7 @@ function deleteVim() {
             document.getElementById("deleteVimResult").innerHTML=xmlhttp.responseText;
         }
     }
-    xmlhttp.open("DELETE","rest/vims/deletevim?id="+id,true);
+    xmlhttp.open("DELETE","api/v1.0/vims/deletevim?id="+id,true);
     xmlhttp.send();
 }
 /*删除VIM中镜像*/
@@ -104,11 +104,33 @@ function deleteImageInVim() {
             document.getElementById("deleteImageInVimResult").innerHTML=xmlhttp.responseText;
         }
     }
-    xmlhttp.open("DELETE","rest/vims/deleteimageinvim?vid="+vId+"&iid="+iId,true);
+    xmlhttp.open("DELETE","api/v1.0/vims/deleteimageinvim?vid="+vId+"&iid="+iId,true);
     xmlhttp.send();
 }
 
 
+/*删除包*/
+function deletePackage() {
+    var xmlhttp;
+    var id=$("#deletePackageId").val();
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            document.getElementById("deletePackageResult").innerHTML=xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open("DELETE","api/v1.0/packages/delete?id="+id,true);
+    xmlhttp.send();
+}
 
 // 文件上传
 $(".ct1 #file").on("change", function () {
@@ -116,7 +138,7 @@ $(".ct1 #file").on("change", function () {
     formData.append("file", $(".ct1 #file")[0].files);
     // formData.append("token", $("#token").val());
     $.ajax({
-        url: "http://localhost:8080/rest/images/upload",
+        url: "api/v1.0/images/upload",
         type: "POST",
         data: formData,
         processData: false,
@@ -132,7 +154,7 @@ $(".ct1 #file").on("change", function () {
 //     formData.append("file", $("#file")[0].files);
 //     // formData.append("token", $("#token").val());
 //     $.ajax({
-//         url: "http://localhost:8080/rest/images/upload",
+//         url: "api/v1.0/images/upload",
 //         type: "POST",
 //         data: formData,
 //         processData: false,

@@ -91,9 +91,9 @@ public class ImageDao {
 //        return "success";
 //    }
 
-    @Transactional
-    public void save(final Image entity) {
-        entityManager.persist(entity);
-    }
+    // @Transactional
+    // public void save(final Image entity) {
+    //     entityManager.persist(entity);
+    // }
 
 }

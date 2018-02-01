@@ -23,7 +23,7 @@ import java.io.File;
 /***
  * Created on 2017/11/12 at 0:28.  
  ***/
-@Path("vims")
+@Path("v1.0/vims")
 public class VIMResource {
     @Context
     HttpServletRequest request;
